@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Variables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        // 1. Globalne variable
+        // globalnim varijablama imamo pristup unutar f-je
+        // var ime = 'Vesna'; // globalna varijabla
+
+        // function zovemSe () {
+        //     console.log(ime);
+        // }
+        // zovemSe();
+        // ----------------------------------
+
+        // 2. lokalne varijable
+        // lokalnim varijablama nemamo pristup van njihovog scope-a
+        // function predstaviSe () {
+        //     var ime = 'Jelena'; // lokalna varijabla za f-ju predstavi se
+        //     console.log(ime);
+        // }
+        // predstaviSe();
+        // console.log(ime); // nemamo pristup, dobicemo gresku u consoli
+        //Uncaught ReferenceError: ime is not defined
+        // -------------------------
+
+        // 3. let ES6
+        // if(true) {
+        //     let ime = 'Petar';
+        // }
+        // console.log(ime); // let cuva scope variable, pa nemamo pristup variabli van njenog scope-a,
+
+        // 4. var
+        // if(true) {
+        //     var ime = 'Petar';
+        // }
+        // console.log(ime); // var ne cuva scope, osim ako nije definisana u f-ji kao u #2
+    </script>
+</head>
+<body>
+
+</body>
+</html>

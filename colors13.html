@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Colors for each</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            document.querySelectorAll('.color-change').forEach(function(button) {
+                button.onclick = function() {
+                    document.querySelector("#hello").style.color = button.dataset.color;
+                }
+            });
+
+            // primer sa for petljom umesto built-in forEach
+
+            // var buttons = document.querySelectorAll('.color-change'); // [button1, button2, button3]
+            // for(let i = 0; i < buttons.length; i++) {
+            //     buttons[i].onclick = function () {
+            //         document.querySelector('#hello').style.color = buttons[i].dataset.color;
+            //     };
+            // };
+
+            // primer kako radi forEach
+            // var myArr = [1, 2, 3];
+            // myArr.forEach(function(clan){
+            //     console.log(clan + 1);
+            // });
+        });
+    </script>
+</head>
+<body>
+    <h1 id="hello">Hello!</h1>
+    <button class="color-change" data-color="red">Red</button>
+    <button class="color-change" data-color="green">Green!</button>
+    <button class="color-change" data-color="blue">Blue</button>
+</body>
+</html>
+
+<!-- dataset is often used when we want to keep some data tied to elements -->
