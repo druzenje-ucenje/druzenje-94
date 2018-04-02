@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domaci-94-peske</title>
+    <style>
+        .tablink {
+            display: inline-block;
+            margin-right: 5px;
+            padding-right: 5px;
+            border-right: 1px solid black;
+        }
+
+        .tablink:last-child {
+            border-right: none;
+        }
+
+        .tablink:hover {
+            cursor: pointer;
+        }
+
+        /* .tablink:active {
+            border-bottom: 3px dashed red;
+        } */
+
+        .tabcontent {
+            color: #ff0f55;
+            /* display: none; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="tablink  defaultOpen" id="first">Home</li>
+            <li class="tablink" id="second">Contact</li>
+            <li class="tablink" id="third">About Us</li>
+        </ul>
+    </nav>
+
+    <div class="tabcontent" id="home">
+        <p>Home content is here.</p>
+    </div>
+    <div class="tabcontent" id="contact">
+        <p>Contact us at: test@gmail.com</p>
+    </div>
+    <div class="tabcontent" id="about">
+        <p>About us content goes here.</p>
+    </div>
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.tabcontent').forEach(function (item) {
+                item.style.display = 'none';
+            });
+
+            var divHome = document.getElementById('home');
+            var divContact = document.getElementById('contact');
+            var divAbout = document.getElementById('about');
+
+            var homeLink = document.getElementById('first');
+            var contactLink = document.getElementById('second');
+            var aboutLink = document.getElementById('third');
+
+            homeLink.onclick = function () {
+                divHome.style.display = 'block';
+                homeLink.style.borderBottom = '3px dashed red';
+                contactLink.style.borderBottom = 'none';
+                aboutLink.style.borderBottom = 'none';
+                divContact.style.display = 'none';
+                divAbout.style.display = 'none';
+            }
+
+            contactLink.onclick = function () {
+                divContact.style.display = 'block';
+                contactLink.style.borderBottom = '3px dashed red';
+                homeLink.style.borderBottom = 'none';
+                aboutLink.style.borderBottom = 'none';
+                divHome.style.display = 'none';
+                divAbout.style.display = 'none';
+            }
+
+            document.getElementById('third').onclick = function () {
+                divAbout.style.display = 'block';
+                aboutLink.style.borderBottom = '3px dashed red';
+                homeLink.style.borderBottom = 'none';
+                contactLink.style.borderBottom = 'none';
+                divHome.style.display = 'none';
+                divContact.style.display = 'none';
+            }
+
+            document.querySelector('.defaultOpen').click();
+
+        });
+
+
+    </script>
+</body>
+
+</html>
