@@ -60,7 +60,6 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('#first').style.borderBottom = '3px dashed red';
 
             document.querySelector('#first').onclick = () => {
                 document.querySelector('#home').className = 'activeTab';
@@ -91,6 +90,8 @@
                 document.querySelector('#second').style.borderBottom = 'none';
                 document.querySelector('#third').style.borderBottom = '3px dashed red';
             }
+
+             document.querySelector('#first').click();
 
         });
 
