@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domaci-94</title>
+    <style>
+        .tablink {
+            display: inline-block;
+            margin-right: 5px;
+            padding-right: 5px;
+            border-right: 1px solid black;
+        }
+
+        .tablink:last-child {
+            border-right: none;
+        }
+
+        .tablink:hover {
+            cursor: pointer;
+        }
+
+        /* .tablink:active {
+            border-bottom: 3px dashed red;
+        } */
+
+        .tabcontent {
+            display: none;
+        }
+
+        .activeTab {
+            display: block;
+            color: #ff0f55;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="tablink" id="first">Home</li>
+            <li class="tablink" id="second">Contact</li>
+            <li class="tablink" id="third">About Us</li>
+        </ul>
+    </nav>
+
+    <div class="tabcontent" id="home">
+        <p>Home content is here.</p>
+    </div>
+    <div class="tabcontent" id="contact">
+        <p>Contact us at: <a href="mailto:test@gmail.com">test@gmail.com</a></p>
+    </div>
+    <div class="tabcontent" id="about">
+        <p>About us content goes here.</p>
+    </div>
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+             // ova varijanta sa forEach petljom ne radi, ostaje display: none;
+            // document.querySelectorAll('.tabcontent').forEach(function (item) {
+            //     item.style.display = 'none';
+            // });
+
+            document.querySelector('#first').onclick = () => {
+                document.querySelector('#home').className = 'activeTab';
+                document.querySelector('#contact').className = 'tabcontent';
+                document.querySelector('#about').className = 'tabcontent';
+
+                document.querySelector('#first').style.borderBottom = '3px dashed red';
+                document.querySelector('#second').style.borderBottom = 'none';
+                document.querySelector('#third').style.borderBottom = 'none';
+            }
+
+            document.querySelector('#second').onclick = () => {
+                document.querySelector('#contact').className = 'activeTab';
+                document.querySelector('#home').className = 'tabcontent';
+                document.querySelector('#about').className = 'tabcontent';
+
+                document.querySelector('#first').style.borderBottom = 'none';
+                document.querySelector('#second').style.borderBottom = '3px dashed red';
+                document.querySelector('#third').style.borderBottom = 'none';
+            }
+
+            document.querySelector('#third').onclick = () => {
+                document.querySelector('#about').className = 'activeTab';
+                document.querySelector('#contact').className = 'tabcontent';
+                document.querySelector('#home').className = 'tabcontent';
+
+                document.querySelector('#first').style.borderBottom = 'none';
+                document.querySelector('#second').style.borderBottom = 'none';
+                document.querySelector('#third').style.borderBottom = '3px dashed red';
+            }
+
+             document.querySelector('#first').click();
+
+        });
+
+    </script>
+</body>
+
+</html>
