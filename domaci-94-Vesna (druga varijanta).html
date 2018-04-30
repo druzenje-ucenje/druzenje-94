@@ -46,7 +46,7 @@
         </ul>
     </nav>
 
-    <div class="activeTab" id="home">
+    <div class="tabcontent" id="home">
         <p>Home content is here.</p>
     </div>
     <div class="tabcontent" id="contact">
@@ -60,6 +60,11 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', () => {
+
+             // ova varijanta sa forEach petljom ne radi, ostaje display: none;
+            // document.querySelectorAll('.tabcontent').forEach(function (item) {
+            //     item.style.display = 'none';
+            // });
 
             document.querySelector('#first').onclick = () => {
                 document.querySelector('#home').className = 'activeTab';
